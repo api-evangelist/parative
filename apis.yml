@@ -1,8 +1,24 @@
 aid: parative
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/parative.png
 name: Parative
-description: 'Parative is a company surfaced as a portfolio company of bain-capital-ventures and added
-  to the API Evangelist network as a stub for enrichment. Sector: ai-apps. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: 'Parative was an AI-powered customer intelligence / customer behavior platform (founded 2017,
+  Boston, MA) that surfaced product-usage signals to define ICP fit, forecast net revenue retention, and
+  predict churn, renewal, and expansion for go-to-market and customer success teams. It was surfaced in
+  the API Evangelist network as a portfolio company of bain-capital-ventures (sector: ai-apps). Parative
+  was acquired by Totango on 2024-10-22 and no longer operates independently; its domain parative.com no
+  longer resolves (no DNS/NS records) and it exposes no reachable public API, developer portal, or
+  documentation surface. This profile is retained as a historical company record.'
 url: https://raw.githubusercontent.com/api-evangelist/parative/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,10 +28,19 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
+x-status: acquired
+x-acquired-by: totango
+x-acquired-date: '2024-10-22'
+x-website-status: unresolved
 tags:
 - Company
 - Ai Apps
+- Customer Intelligence
+- Customer Success
+- Net Revenue Retention
+- Product Usage Analytics
+- Go To Market
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -25,3 +50,8 @@ maintainers:
 common:
 - type: Website
   url: https://www.parative.com/
+x-enrichment:
+  date: '2026-07-20'
+  status: minimal
+  artifacts_added: 0
+  pass: local-v1
