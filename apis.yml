@@ -18,7 +18,12 @@ description: 'Parative was an AI-powered customer intelligence / customer behavi
   the API Evangelist network as a portfolio company of bain-capital-ventures (sector: ai-apps). Parative
   was acquired by Totango on 2024-10-22 and no longer operates independently; its domain parative.com no
   longer resolves (no DNS/NS records) and it exposes no reachable public API, developer portal, or
-  documentation surface. This profile is retained as a historical company record.'
+  documentation surface. Its product API was never public: an Amplify config embedded in the
+  company''s own published npm package shows the backend was a private AWS AppSync GraphQL
+  endpoint (us-west-2, Cognito User Pools auth) serving its React web client, and that endpoint
+  no longer resolves either. One first-party artifact outlives the domain — the npm package
+  @parative/library, the compiled front-end of the Parative app, last published 2024-08-07.
+  This profile is retained as a historical company record.'
 url: https://raw.githubusercontent.com/api-evangelist/parative/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -28,7 +33,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-08-13'
 x-status: acquired
 x-acquired-by: totango
 x-acquired-date: '2024-10-22'
@@ -50,8 +55,32 @@ maintainers:
 common:
 - type: Website
   url: https://www.parative.com/
+- type: Packages
+  url: packages/parative-packages.yml
 x-enrichment:
-  date: '2026-07-20'
+  date: '2026-08-13'
   status: minimal
-  artifacts_added: 0
+  artifacts_added: 2
   pass: local-v1
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    Parative's team and technology were acquired by Totango on 2024-10-22 and folded into
+    Totango's Unison churn-intelligence line, and the company has since been fully
+    decommissioned rather than redirected — parative.com still holds an active registration
+    delegating to four Route 53 nameservers, but the hosted zone behind it is gone, so every
+    host (apex, www, api, docs, developer, app) returns SERVFAIL and no HTTP connection can
+    be opened at all; the only surviving first-party artifact is the npm package
+    @parative/library, whose publishing stopped on 2024-08-07, ten weeks before the
+    acquisition was announced.
+  evidence:
+  - url: https://parative.com/.well-known/agent-card.json
+    status: 0
+  - url: https://parative.com/openapi.json
+    status: 0
+  - url: https://www.parative.com/
+    status: 0
+  - url: https://registry.npmjs.org/@parative/library
+    status: 200
+  checked: '2026-08-13'
