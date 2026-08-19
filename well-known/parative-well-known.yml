@@ -1,0 +1,90 @@
+generated: '2026-08-13'
+method: probed
+source: https://parative.com/.well-known/
+# Parative — /.well-known/ probe
+#
+# RECORDED ABSENCE. Every path below failed, and it failed BEFORE any HTTP
+# request was made: parative.com has no DNS zone at all, so the connection was
+# never established. status 0 here means "no connection", which is a stronger
+# absence than a 404 — there is no server to answer.
+#
+# NO WellKnown / SecurityTxt pointer is emitted in apis.yml. A pointer asserts
+# that the PROVIDER serves that surface; nothing here was served.
+
+name: Parative
+slug: parative
+checked: '2026-08-13'
+hosts_probed:
+- parative.com
+- www.parative.com
+hit_count: 0
+served_document_count: 0
+pointer_emitted: false
+
+dns:
+  zone_resolves: false
+  registrar: Amazon Registrar, Inc.
+  registry_expiry: '2026-11-17'
+  registry_status: ACTIVE
+  delegated_nameservers:
+  - ns-120.awsdns-15.com
+  - ns-660.awsdns-18.net
+  - ns-1105.awsdns-10.org
+  - ns-1840.awsdns-38.co.uk
+  authoritative_response: SERVFAIL
+  note: >-
+    The domain registration is still active and still delegates to four Route 53
+    nameservers, but the hosted zone behind that delegation is gone — an A/SOA/ANY query
+    to the delegated nameservers returns no answer and a recursive resolver returns
+    SERVFAIL. The registration is being allowed to lapse rather than actively served.
+
+probes:
+- path: /.well-known/security.txt
+  url: https://parative.com/.well-known/security.txt
+  status: 0
+  result: dns-failure
+  file: null
+- path: /.well-known/openid-configuration
+  url: https://parative.com/.well-known/openid-configuration
+  status: 0
+  result: dns-failure
+  file: null
+- path: /.well-known/oauth-authorization-server
+  url: https://parative.com/.well-known/oauth-authorization-server
+  status: 0
+  result: dns-failure
+  file: null
+- path: /.well-known/api-catalog
+  url: https://parative.com/.well-known/api-catalog
+  status: 0
+  result: dns-failure
+  file: null
+- path: /.well-known/ai-plugin.json
+  url: https://parative.com/.well-known/ai-plugin.json
+  status: 0
+  result: dns-failure
+  file: null
+- path: /.well-known/agent-card.json
+  url: https://parative.com/.well-known/agent-card.json
+  status: 0
+  result: dns-failure
+  file: null
+- path: /.well-known/agent.json
+  url: https://parative.com/.well-known/agent.json
+  status: 0
+  result: dns-failure
+  file: null
+- path: /llms.txt
+  url: https://parative.com/llms.txt
+  status: 0
+  result: dns-failure
+  file: null
+- path: /openapi.json
+  url: https://parative.com/openapi.json
+  status: 0
+  result: dns-failure
+  file: null
+
+# The same nine paths were probed against www.parative.com with identical results
+# (status 0, dns-failure). Additional hosts probed for DNS only — api.parative.com,
+# docs.parative.com, developer.parative.com and app.parative.com — none resolve.

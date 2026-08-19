@@ -1,0 +1,92 @@
+generated: '2026-08-13'
+method: searched
+source: https://registry.npmjs.org/@parative/library
+# Parative — first-party published packages
+#
+# Parative was acquired by Totango on 2024-10-22 and parative.com no longer resolves
+# (see ../apis.yml x-coverage). One first-party package survives the company: it is
+# published to the public npm registry, which outlives the domain, and its registry
+# metadata is therefore the only provider-published, reliably-dated evidence left
+# about this company's engineering surface.
+#
+# OWNERSHIP: @parative/library is unambiguously first-party. Both npm maintainers
+# carry addresses on the company's own domain — parativejason <jason@parative.com>
+# and parative-dev <jacob@parative.com>.
+
+name: Parative
+slug: parative
+package_count: 1
+official_count: 1
+sdk_count: 0
+registries_searched:
+- npm
+- pypi
+- rubygems
+- github
+
+packages:
+- name: '@parative/library'
+  registry: npm
+  url: https://www.npmjs.com/package/@parative/library
+  registry_metadata: https://registry.npmjs.org/@parative/library
+  language: javascript
+  official: true
+  # Structured currency fields — read from the npm registry metadata endpoint,
+  # NOT prose. This is the abandonment signal for this company.
+  version: 4.4.303-1
+  published: '2024-08-07'
+  first_published: '2023-08-01'
+  version_count: 3780
+  license: null
+  repository: null
+  homepage: null
+  maintainers:
+  - parativejason
+  - parative-dev
+  peer_dependencies:
+  - '@apollo/client'
+  - date-fns
+  - graphql
+  - lodash
+  - react
+  - react-dom
+  - react-jss
+  - react-router-dom
+  - react-use
+  kind: internal-ui-library
+  is_api_client_sdk: false
+  note: >-
+    This is NOT a customer-facing API client SDK. It is the compiled React front-end of
+    the Parative application itself, published to a public npm scope by the company's own
+    CI — 4,842 files across components/, pages/, ui/, common/, contexts/, services/ and a
+    widget/ tree, with react + react-dom + react-router-dom as peer dependencies. It ships
+    no documentation, no README, no license and no repository link, and nothing in it is
+    addressed to third-party integrators. It is recorded here because it is real,
+    first-party and dated — not because it constitutes an SDK. No `SDKs` pointer is
+    emitted in apis.yml for exactly that reason.
+  decay_signal: >-
+    3,780 versions were published between 2023-08-01 and 2024-08-07 — a CI publishing on
+    nearly every merge. Publishing then stops dead on 2024-08-07, ten weeks before Totango
+    announced the acquisition of Parative's team and technology on 2024-10-22. The package
+    has not been touched since.
+
+# What the package reveals about the (now decommissioned) backend.
+# Recorded as architecture evidence only — this is NOT a callable API and is
+# deliberately NOT wired as an apis[] entry or a baseURL in apis.yml.
+observed_backend:
+  style: graphql
+  platform: aws-appsync
+  region: us-west-2
+  auth: AMAZON_COGNITO_USER_POOLS
+  status: decommissioned
+  resolves: false
+  evidence: >-
+    An Amplify configuration block embedded in the package's compiled bundle names an AWS
+    AppSync GraphQL endpoint in us-west-2 with Cognito User Pools authentication. The
+    endpoint host no longer resolves in DNS, so the schema could not be introspected and
+    no SDL was captured. The endpoint hostname and the AppSync API key that sit beside it
+    in the bundle are deliberately NOT reproduced in this repository.
+  note: >-
+    Parative's product API was an internal GraphQL backend for its own web client, not a
+    documented public API. No public GraphQL endpoint, OpenAPI, or developer portal was
+    ever found for this company.
