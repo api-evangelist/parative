@@ -103,3 +103,12 @@ x-coverage:
   - url: https://registry.npmjs.org/@parative/library
     status: 200
   checked: '2026-08-13'
+x-lifecycle:
+  state: unresolved
+  reason: domain-does-not-resolve
+  observed: '2026-09-27'
+  detail: >-
+    The company's own domain returned no A or AAAA record when probed. This is an observation about the domain, not a request from the company.
+  indexed: true
+  successor: totango
+  successor_in_catalog: false
